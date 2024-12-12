@@ -1,0 +1,30 @@
+.btnCreateArticle {
+    margin-right: 2rem;
+}
+
+.card-title:hover, .card-img-top:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media (max-width: 576px) {
+    .navbar .nav {
+        justify-content: center;
+    }
+
+    .navbar .btnCreateArticle, 
+    .navbar form {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar form input {
+        width: 100%;
+    }
+
+    .btnCreateArticle {
+        margin: auto;
+        width: 50% !important;
+        margin-top: 1rem;
+    }
+}

@@ -1,0 +1,33 @@
+<app-header></app-header>
+<div class="container mt-5" *ngIf="article; else loading">
+   <div class="text-center">
+      <h2>{{ article.title }}</h2>
+      <h4>{{ article.subtitle }}</h4>
+      <p><strong>Category: </strong>{{ article.category }}</p>
+      <img *ngIf="article.image_data" 
+          [src]="'data:' + article.image_media_type + ';base64,' + article.image_data" 
+          alt="{{ article.title}}" 
+          class="img-fluid mb-4 mt-4" />
+    </div>
+    <p><strong>Abstract:</strong> {{ article.abstract }}</p>
+    
+    <!-- Article body is rendered as HTML -->
+    <div [innerHTML]="article.body"></div>
+  
+  <div class="d-flex justify-content-between align-items-center pt-5 pb-5">
+    <button type="button" class="btn btn-secondary my-auto" (click)="goBackToArticles()">Back to List</button>
+    <button *ngIf="article.id && (isLoggedIn() || isSessionActive)" class="btn btn-danger my-auto" (click)="confirmAndRemoveArticle(article.id)">Remove Article</button>
+    <button *ngIf="isLoggedIn() || isSessionActive" (click)="editArticle()" class="btn btn-primary my-auto">Edit Article</button>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="d-flex justify-content-center">
+    <div *ngIf="errorMessage" class="alert alert-danger mt-5 w-25 text-center">{{ errorMessage }}</div>
+    <div *ngIf="!errorMessage" class="alert alert-primary mt-5 w-25 text-center">Loading article details...</div>
+  </div>
+</ng-template>
+
+<footer class="text-center mt-5">
+    <p>News-Manager-Project by Gaia, Pardis and Lazar</p>
+</footer> 

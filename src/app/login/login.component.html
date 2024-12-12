@@ -1,0 +1,26 @@
+<body class="bg-light">
+  <div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="login-container border rounded p-5 mt-3 shadow">
+      <h2 class="text-center mb-4 text-primary">Login</h2>
+      <form (ngSubmit)="login()">
+        <div class="form-group mt-5">
+          <label for="username">Username:</label>
+          <input type="text" class="form-control mt-2" id="username" name="username" [(ngModel)]="username" required />
+        </div>
+        <div class="form-group mt-3">
+          <label for="password">Password:</label>
+          <input type="password" class="form-control mt-2" id="password" name="password" [(ngModel)]="password" required />
+        </div>
+        <div class="text-danger mt-5">{{ errorMessage }}</div>
+        <div class="d-flex justify-content-between mt-3">
+          <button type="submit" class="btn btn-primary">Login</button>
+          <button type="button" class="btn btn-link" (click)="skipLogin()">Skip</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+<footer class="text-center mt-5">
+  <p>News-Manager-Project by Gaia, Pardis and Lazar</p>
+</footer> 

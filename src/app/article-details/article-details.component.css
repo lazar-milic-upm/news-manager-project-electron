@@ -1,0 +1,32 @@
+.container {
+    padding-top: 20px;
+  }
+  
+  h2 {
+    margin-bottom: 10px;
+  }
+  
+  h4 {
+    color: #6c757d;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 1.1em;
+  }
+  
+  .text-muted {
+    font-size: 0.9em;
+    color: #6c757d;
+  }
+  
+  @media screen and (min-width: 1400px) {
+    .container {
+      width: 50%;
+    }
+  }

@@ -1,0 +1,14 @@
+.container {
+    max-width: 60rem;
+}
+.invalid-feedback {
+    display: block;
+}
+
+input.ng-dirty.ng-touched.ng-valid, option.ng-pristine.ng-touched.ng-valid, input.ng-pristine.ng-touched.ng-valid, select.ng-touched.ng-valid, textarea.ng-valid.ng-touched {
+    border: 1px solid #28a745;
+}
+
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched, option.ng-invalid.ng-touched, select.ng-touched.ng-invalid {
+    border: 1px solid red;
+}

@@ -1,0 +1,15 @@
+<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom bg-light">
+    <div class="col-md-3 mb-2 mb-md-0"></div>
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+      <li><a href="/home" class="nav-link px-2"><h1 class="navbar-title">Newspaper Project</h1></a></li>
+    </ul>
+    <div class="col-md-3 text-end">
+      <div *ngIf="!isLoggedIn && !isSessionActive">
+        <button class="btn btn-outline-primary mx-5" (click)="login()">Log in</button>
+      </div>
+      <div class="d-flex align-items-center justify-content-center" *ngIf="isLoggedIn || isSessionActive">
+        <span class="mx-4">Welcome, {{ username }}</span>
+        <button class="btn btn-outline-primary" (click)="logout()">Log out</button>
+      </div>
+    </div>
+</header>
